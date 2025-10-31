@@ -1,42 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="12dp"
-    android:background="@android:color/white"
-    android:elevation="6dp"
-    android:layout_margin="8dp">
+    android:layout_margin="12dp"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="10dp"
+    app:cardUseCompatPadding="true"
+    app:strokeColor="@color/card_stroke"
+    app:strokeWidth="1dp">
 
-    <ImageView
-        android:id="@+id/ivPoster"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:scaleType="centerCrop"
-        android:background="@android:color/darker_gray"
-        android:layout_marginBottom="8dp" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black" />
+        <ImageView
+            android:id="@+id/ivPoster"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="2:3" />
 
-    <TextView
-        android:id="@+id/tvRating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="@android:color/holo_orange_dark"
-        android:layout_marginTop="2dp" />
+        <View
+            android:id="@+id/posterScrim"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_poster_scrim"
+            app:layout_constraintTop_toTopOf="@id/ivPoster"
+            app:layout_constraintBottom_toBottomOf="@id/ivPoster"
+            app:layout_constraintStart_toStartOf="@id/ivPoster"
+            app:layout_constraintEnd_toEndOf="@id/ivPoster" />
 
-    <TextView
-        android:id="@+id/tvOverview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="@android:color/darker_gray"
-        android:layout_marginTop="4dp" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/tvRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/bg_rating_chip"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/rating_chip_text"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/ivPoster"
+            app:layout_constraintEnd_toEndOf="@id/ivPoster" />
+
+        <LinearLayout
+            android:id="@+id/contentContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/ivPoster"
+            app:layout_constraintStart_toStartOf="@id/ivPoster"
+            app:layout_constraintEnd_toEndOf="@id/ivPoster">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:maxLines="2"
+                android:ellipsize="end" />
+
+            <TextView
+                android:id="@+id/tvOverview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/overview_text"
+                android:textSize="14sp"
+                android:maxLines="4"
+                android:ellipsize="end" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

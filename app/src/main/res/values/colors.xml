@@ -7,4 +7,17 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- App specific palette -->
+    <color name="gradient_start">#0B1120</color>
+    <color name="gradient_end">#1F2937</color>
+    <color name="card_surface">#F8FAFC</color>
+    <color name="card_stroke">#334155</color>
+    <color name="accent_primary">#6366F1</color>
+    <color name="rating_chip_bg">#F59E0B</color>
+    <color name="rating_chip_text">#1E293B</color>
+    <color name="overview_text">#E2E8F0</color>
+    <color name="status_card_bg">#EEF2FF</color>
+    <color name="status_icon_tint">#4338CA</color>
+    <color name="status_text">#1E1B4B</color>
 </resources>
