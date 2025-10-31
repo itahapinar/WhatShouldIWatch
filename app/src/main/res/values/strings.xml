@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">neizlesem</string>
+    <string name="app_name">Ne İzlesem</string>
+    <string name="app_tagline">Yeni filmleri keşfet</string>
+    <string name="intro_text">Tür seç veya popüler önerilere göz at.</string>
+    <string name="label_choose_genre">Tür seç</string>
+    <string name="label_status">Durum</string>
+    <string name="status_placeholder">Hazırsın!</string>
 </resources>
